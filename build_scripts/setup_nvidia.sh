@@ -85,12 +85,8 @@ dnf5 install -y \
 ## nvidia post-install steps
 dnf5 -y config-manager setopt "fedora-nvidia".enabled=false
 
-# Universal Blue specific Initramfs fixes
-cp /etc/modprobe.d/nvidia-modeset.conf /usr/lib/modprobe.d/nvidia-modeset.conf
 # we must force driver load to fix black screen on boot for nvidia desktops
 sed -i 's@omit_drivers@force_drivers@g' /usr/lib/dracut/dracut.conf.d/99-nvidia.conf
-# as we need forced load, also mustpre-load intel/amd iGPU else chromium web browsers fail to use hardware acceleration
-sed -i 's@ nvidia @ i915 amdgpu nvidia @g' /usr/lib/dracut/dracut.conf.d/99-nvidia.conf
 
 # re-enable negativo17-mutlimedia since we disabled it
 if [[ "${NEGATIVO17_MULT_PREV_ENABLED}" = "Y" ]]; then
