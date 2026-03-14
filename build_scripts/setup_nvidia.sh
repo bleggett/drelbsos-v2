@@ -86,10 +86,10 @@ dnf5 install -y \
 dnf5 -y config-manager setopt "fedora-nvidia".enabled=false
 
 # Suspend without the systemd services still not working correctly in all cases
-# sed -i 's/NVreg_UseKernelSuspendNotifiers=1/NVreg_UseKernelSuspendNotifiers=0/' /usr/lib/modprobe.d/nvidia.conf
+sed -i 's/NVreg_UseKernelSuspendNotifiers=1/NVreg_UseKernelSuspendNotifiers=0/' /usr/lib/modprobe.d/nvidia.conf
 
 # we must force driver load to fix black screen on boot for nvidia desktops
-# sed -i 's@omit_drivers@force_drivers@g' /usr/lib/dracut/dracut.conf.d/99-nvidia.conf
+sed -i 's@omit_drivers@force_drivers@g' /usr/lib/dracut/dracut.conf.d/99-nvidia.conf
 
 # re-enable negativo17-mutlimedia since we disabled it
 if [[ "${NEGATIVO17_MULT_PREV_ENABLED}" = "Y" ]]; then
