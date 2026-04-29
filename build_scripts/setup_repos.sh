@@ -18,7 +18,7 @@ for copr in \
     hikariknight/looking-glass-kvmfr \
     rok/cdemu \
     rodoma92/rmlint \
-    barsnick/non-fed \
+    drelbszoomer/drelbsos-copr \
     erikreider/SwayNotificationCenter \
     ilyaz/LACT; \
 do \
@@ -35,7 +35,6 @@ sed -i 's@enabled=0@enabled=1@g' /etc/yum.repos.d/fedora-multimedia.repo && \
 dnf5 -y config-manager addrepo --from-repofile=https://negativo17.org/repos/fedora-rar.repo && \
 dnf5 -y config-manager addrepo --from-repofile=https://negativo17.org/repos/fedora-steam.repo && \
 dnf5 -y config-manager addrepo --from-repofile=https://negativo17.org/repos/fedora-nvidia.repo && \
-dnf5 config-manager addrepo --from-repofile=https://openrazer.github.io/hardware:razer.repo && \
 dnf5 -y config-manager setopt "*akmods*".priority=2 && \
 dnf5 -y config-manager setopt "*terra*".priority=3 "*terra*".exclude="nerd-fonts" && \
 dnf5 -y config-manager setopt "*fedora-multimedia*".priority=10 && \

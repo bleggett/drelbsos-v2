@@ -11,8 +11,7 @@ AKMODNV_PATH=${AKMODNV_PATH:-/tmp/akmods-rpms}
 
 dnf5 -y copr enable ublue-os/staging && \
 dnf5 -y install \
-    mesa-vdpau-drivers.x86_64 \
-    mesa-vdpau-drivers.i686
+    mesa-dri-drivers.x86_64
 
 # this is only to aid in human understanding of any issues in CI
 find "${AKMODNV_PATH}"/
@@ -35,12 +34,12 @@ MULTILIB=(
     mesa-libEGL.i686
     mesa-libGL.i686
     mesa-libgbm.i686
-    mesa-va-drivers.i686
     mesa-vulkan-drivers.i686
 )
 
 if [[ "$(rpm -E %fedora)" -lt 41 ]]; then
     MULTILIB+=(
+        mesa-va-drivers.i686
         mesa-libglapi.i686
         libvdpau.i686
     )
