@@ -34,12 +34,12 @@ MULTILIB=(
     mesa-libEGL.i686
     mesa-libGL.i686
     mesa-libgbm.i686
-    mesa-va-drivers.i686
     mesa-vulkan-drivers.i686
 )
 
 if [[ "$(rpm -E %fedora)" -lt 41 ]]; then
     MULTILIB+=(
+        mesa-va-drivers.i686
         mesa-libglapi.i686
         libvdpau.i686
     )
