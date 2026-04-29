@@ -37,7 +37,7 @@ dnf5 -y install \
     cdemu-daemon \
     cdemu-client \
     gcdemu \
-    openrazer-daemon \
+    openrazer-meta \
     egl-utils \
     ncdu \
     btrfs-assistant \
