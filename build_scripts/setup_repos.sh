@@ -18,7 +18,7 @@ for copr in \
     hikariknight/looking-glass-kvmfr \
     rok/cdemu \
     rodoma92/rmlint \
-    barsnick/non-fed \
+    drelbszoomer/drelbsos-copr \
     erikreider/SwayNotificationCenter \
     ilyaz/LACT; \
 do \
